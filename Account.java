@@ -42,17 +42,17 @@ public class Account {
 		return balance;
 	}
 
-	public int transferTo(String account, int transfer) {
+	public int transferTo(Account another, int transfer) {
 		if (transfer <= balance) {
-			balance -= transfer;
-			System.out.println("Transfered to account " + account + " succeeded!");
+			this.balance -= transfer;
+			another.balance += transfer;
+			System.out.println("Transfered to account " + another.getName() + " succeeded!");
 		}
 		else {
 			System.out.println("Amount exceeded!");
 		}
 		System.out.println("Balance: " + balance);
 		return balance;
-
 	}
 
 	public String toString() {
